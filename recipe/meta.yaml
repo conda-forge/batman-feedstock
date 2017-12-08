@@ -1,7 +1,7 @@
 {% set name = "batman" %}
-{% set version = "1.7" %}
-{% set tag = "1.7-Lucius" %}
-{% set sha256 = "0aeced1c564654cd5b7595d1ae459a9d7fd2fb9211f1282bda60319d387d96ef" %}
+{% set version = "1.7.1" %}
+{% set tag = "1.7.1-Lucius" %}
+{% set sha256 = "daf100122e42001a7701a8fa892ee7d2a3831419180c686e1efb27485840006a" %}
 
 package:
   name: {{ name|lower }}
@@ -14,7 +14,7 @@ source:
 
 build:
   skip: True  # [not win]
-  number: 0
+  number: 1
 
 requirements:
   build:
