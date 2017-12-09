@@ -56,7 +56,7 @@ about:
     analysis using any computer solver. From a simple settings file, it handle
     automatically all necessary steps to do such analysis. Furthermore,
     batman's API allows to use independantly all functionalities.
-  doc_url: https://gitlab.com/cerfacs/batman
+  doc_url: https://cerfacs.gitlab.io/batman
   dev_url: https://batman-cerfacs.zulipchat.com
 
 extra:
