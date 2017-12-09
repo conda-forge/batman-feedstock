@@ -1,7 +1,7 @@
 {% set name = "batman" %}
 {% set version = "1.7.1" %}
 {% set tag = "1.7.1-Lucius" %}
-{% set sha256 = "daf100122e42001a7701a8fa892ee7d2a3831419180c686e1efb27485840006a" %}
+{% set sha256 = "9bd5e6b38b2ef56e95fd3bb542c2386ce735572a730a3605d6be9024524a04dd" %}
 
 package:
   name: {{ name|lower }}
