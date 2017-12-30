@@ -14,11 +14,13 @@ source:
 
 build:
   skip: True  # [win]
-  number: 1
+  number: 2
 
 requirements:
   build:
     - toolchain
+    - gcc  # [osx]
+    - libgfortran  # [linux]
     - pytest-runner
     - python
     - setuptools
@@ -26,20 +28,25 @@ requirements:
     - numpy >=1.13
     - jsonschema
     - pathos >=0.2
-    - matplotlib >=1.5
+    - matplotlib >=2.1
     - ffmpeg
     - openturns ==1.9
     - scikit-learn >=0.18
+    - futures  # [py27]
   run:
     - python
+    - libgfortran
     - scipy >=0.15
     - numpy >=1.13
     - jsonschema
     - pathos >=0.2
-    - matplotlib >=1.5
+    - matplotlib >=2.1
     - ffmpeg
     - openturns ==1.9
     - scikit-learn >=0.18
+    - sphinx >=1.4
+    - sphinx_rtd_theme
+    - futures  # [py27]
 
 test:
   imports:
