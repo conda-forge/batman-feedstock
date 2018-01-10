@@ -51,6 +51,8 @@ requirements:
 test:
   imports:
     - batman
+  commands:
+    - batman -h
 
 about:
   home: https://gitlab.com/cerfacs/batman
