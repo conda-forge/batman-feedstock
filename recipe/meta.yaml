@@ -1,7 +1,7 @@
 {% set name = "batman" %}
-{% set version = "1.7.1" %}
-{% set tag = "1.7.1-Lucius" %}
-{% set sha256 = "9bd5e6b38b2ef56e95fd3bb542c2386ce735572a730a3605d6be9024524a04dd" %}
+{% set version = "1.7.2" %}
+{% set tag = "1.7.2-Lucius" %}
+{% set sha256 = "cc13aeb5c027e45234f0eb4c9a7c200a58542224222b490c84590fbc06a96b78" %}
 
 package:
   name: {{ name|lower }}
@@ -14,7 +14,7 @@ source:
 
 build:
   skip: True  # [win]
-  number: 2
+  number: 3
 
 requirements:
   build:
@@ -65,7 +65,7 @@ about:
     analysis using any computer solver. From a simple settings file, it handle
     automatically all necessary steps to do such analysis. Furthermore,
     batman's API allows to use independantly all functionalities.
-  doc_url: https://cerfacs.gitlab.io/batman
+  doc_url: http://batman.readthedocs.io
   dev_url: https://batman-cerfacs.zulipchat.com
 
 extra:
