@@ -13,14 +13,11 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  skip: True  # [win]
-  number: 3
+  number: 4
+  script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
   build:
-    - toolchain
-    - gcc  # [osx]
-    - libgfortran  # [linux]
     - pytest-runner
     - python
     - setuptools
@@ -35,7 +32,6 @@ requirements:
     - futures  # [py27]
   run:
     - python
-    - libgfortran
     - scipy >=0.15
     - numpy >=1.13
     - jsonschema
@@ -44,8 +40,6 @@ requirements:
     - ffmpeg
     - openturns ==1.9
     - scikit-learn >=0.18
-    - sphinx >=1.4
-    - sphinx_rtd_theme
     - futures  # [py27]
 
 test:
