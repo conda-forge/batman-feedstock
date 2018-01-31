@@ -1,7 +1,7 @@
 {% set name = "batman" %}
-{% set version = "1.7.2" %}
-{% set tag = "1.7.2-Lucius" %}
-{% set sha256 = "cc13aeb5c027e45234f0eb4c9a7c200a58542224222b490c84590fbc06a96b78" %}
+{% set version = "1.7.3" %}
+{% set tag = "1.7.3-Lucius" %}
+{% set sha256 = "411a7d07a50c8019bbf840734123ddd66464745fc38169c45dbd9d7263720cbd" %}
 
 package:
   name: {{ name|lower }}
@@ -14,13 +14,11 @@ source:
 
 build:
   skip: True  # [win]
-  number: 3
+  number: 4
+  script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
   build:
-    - toolchain
-    - gcc  # [osx]
-    - libgfortran  # [linux]
     - pytest-runner
     - python
     - setuptools
@@ -35,7 +33,6 @@ requirements:
     - futures  # [py27]
   run:
     - python
-    - libgfortran
     - scipy >=0.15
     - numpy >=1.13
     - jsonschema
@@ -44,8 +41,6 @@ requirements:
     - ffmpeg
     - openturns ==1.9
     - scikit-learn >=0.18
-    - sphinx >=1.4
-    - sphinx_rtd_theme
     - futures  # [py27]
 
 test:
