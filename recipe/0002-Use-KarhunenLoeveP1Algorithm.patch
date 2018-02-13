@@ -1,0 +1,74 @@
+From 2fdaa81e84b83b68e3ffbe2d13552d5eb8ed203d Mon Sep 17 00:00:00 2001
+From: Julien Schueller <schueller@phimeca.com>
+Date: Mon, 12 Feb 2018 10:55:52 +0100
+Subject: [PATCH 2/2] Use KarhunenLoeveP1Algorithm
+
+Not sure if we should use getModesAsProcessSample or getScaledModesAsProcessSample
+---
+ batman/space/gp_1d_sampler.py | 30 ++++++++++++++++++------------
+ 1 file changed, 18 insertions(+), 12 deletions(-)
+
+diff --git a/batman/space/gp_1d_sampler.py b/batman/space/gp_1d_sampler.py
+index ee9eec2..74649a2 100644
+--- a/batman/space/gp_1d_sampler.py
++++ b/batman/space/gp_1d_sampler.py
+@@ -101,12 +101,14 @@ class Gp1dSampler:
+         elif self.covariance == "Spherical":
+             model = ot.SphericalModel(1, [self.sigma], [self.theta])
+ 
+-        # Karhunen-Loeve decomposition factory using P1 approximation
+-        factory = ot.KarhunenLoeveP1Factory(mesh, self.threshold)
++        # Karhunen-Loeve decomposition algorithm using P1 approximation
++        algo = ot.KarhunenLoeveP1Algorithm(mesh, model, self.threshold)
+ 
+         # Computation of the eigenvalues and eigen function values at nodes
+-        ev = ot.NumericalPoint()
+-        modes = factory.buildAsProcessSample(model, ev)
++        algo.run()
++        result = algo.getResult()
++        ev = result.getEigenValues() 
++        modes = result.getModesAsProcessSample()
+         n_modes = modes.getSize()
+ 
+         # Evaluation of the eigen functions
+@@ -263,12 +265,14 @@ class Gp2dSampler:
+         elif covariance == "Spherical":
+             model = ot.SphericalModel(1, [self.sigma], self.theta)
+ 
+-        # Karhunen-Loeve decomposition factory using P1 approximation.
+-        factory = ot.KarhunenLoeveP1Factory(mesh, self.threshold)
++        # Karhunen-Loeve decomposition algorithm using P1 approximation.
++        factory = ot.KarhunenLoeveP1Algorithm(mesh, model, self.threshold)
+ 
+         # Computation of the eigenvalues and eigen function values at nodes.
+-        ev = ot.NumericalPoint()
+-        modes = factory.buildAsProcessSample(model, ev)
++        algo.run()
++        result = algo.getResult()
++        ev = result.getEigenValues()
++        modes = result.getModesAsProcessSample()
+         n_modes = modes.getSize()
+ 
+         # Evaluation of the eigen functions
+@@ -405,12 +409,14 @@ class Gp3dSampler:
+         elif covariance == "Spherical":
+             model = ot.SphericalModel(1, [self.sigma], self.theta)
+ 
+-        # Karhunen-Loeve decomposition factory using P1 approximation.
+-        factory = ot.KarhunenLoeveP1Factory(mesh, self.threshold)
++        # Karhunen-Loeve decomposition algorithm using P1 approximation.
++        factory = ot.KarhunenLoeveP1Algorithm(mesh, model, self.threshold)
+ 
+         # Computation of the eigenvalues and eigen function values at nodes.
+-        ev = ot.NumericalPoint()
+-        modes = factory.buildAsProcessSample(model, ev)
++        algo.run()
++        result = algo.getResult()
++        ev = result.getEigenValues()
++        modes = result.getModesAsProcessSample()
+         n_modes = modes.getSize()
+ 
+         # Evaluation of the eigen functions
+-- 
+2.7.4
+
