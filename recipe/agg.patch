@@ -1,0 +1,12 @@
+diff --git a/test_cases/functionnal_test.py b/test_cases/functionnal_test.py
+index 017c444..32a898e 100644
+--- a/test_cases/functionnal_test.py
++++ b/test_cases/functionnal_test.py
+@@ -1,4 +1,7 @@
+ """Functionnal testing suite."""
++
++import matplotlib
++matplotlib.use('Agg')
+ import os
+ import shutil
+ import sys

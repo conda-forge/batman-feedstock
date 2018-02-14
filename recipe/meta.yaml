@@ -15,6 +15,7 @@ source:
     - 0001-Use-SobolIndicesExperiment.patch
     - 0002-Use-KarhunenLoeveP1Algorithm.patch
     - 0001-Fix-gp_sampler-seed.patch
+    - agg.patch
 
 build:
   skip: True  # [win]
