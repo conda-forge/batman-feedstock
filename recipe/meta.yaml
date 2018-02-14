@@ -9,13 +9,15 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  url: https://gitlab.com/cerfacs/{{ name }}/repository/archive.tar.gz?ref={{ tag }}
+  url: https://gitlab.com/cerfacs/batman/repository/archive.tar.gz?ref={{ tag }}
   sha256: {{ sha256 }}
 
 build:
   skip: True  # [win]
   number: 4
   script: python setup.py install --single-version-externally-managed --record record.txt
+  patches:
+    - commit.patch
 
 requirements:
   build:
