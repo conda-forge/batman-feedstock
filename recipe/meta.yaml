@@ -13,10 +13,13 @@ source:
   sha256: {{ sha256 }}
   patches:
     - commit.patch
+    - 0001-Use-SobolIndicesExperiment.patch
+    - 0002-Use-KarhunenLoeveP1Algorithm.patch
+    - 0001-Fix-gp_sampler-seed.patch
 
 build:
   skip: True  # [win]
-  number: 4
+  number: 5
   script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
@@ -30,7 +33,7 @@ requirements:
     - pathos >=0.2
     - matplotlib >=2.1
     - ffmpeg
-    - openturns ==1.9
+    - openturns ==1.10
     - scikit-learn >=0.18
     - futures  # [py27]
   run:
@@ -41,7 +44,7 @@ requirements:
     - pathos >=0.2
     - matplotlib >=2.1
     - ffmpeg
-    - openturns ==1.9
+    - openturns ==1.10
     - scikit-learn >=0.18
     - futures  # [py27]
 

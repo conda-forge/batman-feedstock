@@ -1,0 +1,43 @@
+From e5b4aa7bc22314f35e16d052970d503cacaff418 Mon Sep 17 00:00:00 2001
+From: Julien Schueller <schueller@phimeca.com>
+Date: Mon, 12 Feb 2018 10:46:57 +0100
+Subject: [PATCH 1/2] Use SobolIndicesExperiment
+
+---
+ batman/space/sampling.py | 4 ++--
+ batman/uq/uq.py          | 4 ++--
+ 2 files changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/batman/space/sampling.py b/batman/space/sampling.py
+index 40540a3..b1238da 100644
+--- a/batman/space/sampling.py
++++ b/batman/space/sampling.py
+@@ -107,8 +107,8 @@ class Doe():
+         elif self.kind == 'saltelli':
+             # Only relevant for computation of Sobol' indices
+             size = self.n_samples // (2 * self.dim + 2)  # N(2*dim + 2)
+-            self.sequence_type = ot.SobolIndicesAlgorithmImplementation.Generate(
+-                distribution, size, True)
++            self.sequence_type = ot.SobolIndicesExperiment(distribution,
++                size, True).generate()
+ 
+     def generate(self):
+         """Generate the DOE.
+diff --git a/batman/uq/uq.py b/batman/uq/uq.py
+index 052ba63..ac810cd 100644
+--- a/batman/uq/uq.py
++++ b/batman/uq/uq.py
+@@ -314,8 +314,8 @@ class UQ:
+ 
+             if self.surrogate is not None:
+                 size = self.points_sample
+-                input_design = ot.SobolIndicesAlgorithmImplementation.Generate(
+-                    self.distribution, size, True)
++                input_design = ot.SobolIndicesExperiment(self.distribution,
++                    size, True).generate()
+                 output_design = sobol_model(input_design)
+                 self.logger.info("Created {} samples for Sobol'"
+                                  .format(len(output_design)))
+-- 
+2.7.4
+
