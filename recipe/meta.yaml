@@ -15,7 +15,6 @@ source:
     - 0001-Use-SobolIndicesExperiment.patch
     - 0002-Use-KarhunenLoeveP1Algorithm.patch
     - 0001-Fix-gp_sampler-seed.patch
-    - agg.patch
 
 build:
   skip: True  # [win]
@@ -51,15 +50,8 @@ requirements:
 test:
   imports:
     - batman
-  source_files:
-    - test_cases/
-    - batman/
-  requires:
-    - pytest-runner
-    - mock
   commands:
     - batman -h
-    #- py.test test_cases/ --ignore=test_cases/Mascaret
 
 about:
   home: https://gitlab.com/cerfacs/batman
