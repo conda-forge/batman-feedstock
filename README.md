@@ -18,8 +18,8 @@ batman's API allows to use independantly all functionalities.
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/batman-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/batman-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/batman-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/batman-feedstock)
+Linux: ![](https://cdn.rawgit.com/conda-forge/conda-smithy/90845bba35bec53edac7a16638aa4d77217a3713/conda_smithy/static/disabled.svg)
+OSX: ![](https://cdn.rawgit.com/conda-forge/conda-smithy/90845bba35bec53edac7a16638aa4d77217a3713/conda_smithy/static/disabled.svg)
 Windows: ![](https://cdn.rawgit.com/conda-forge/conda-smithy/90845bba35bec53edac7a16638aa4d77217a3713/conda_smithy/static/disabled.svg)
 
 Current release info
