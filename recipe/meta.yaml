@@ -1,7 +1,7 @@
 {% set name = "batman" %}
-{% set version = "1.7.3" %}
-{% set tag = "1.7.3-Lucius" %}
-{% set sha256 = "411a7d07a50c8019bbf840734123ddd66464745fc38169c45dbd9d7263720cbd" %}
+{% set version = "1.8" %}
+{% set tag = "1.8-Falcone" %}
+{% set sha256 = "7c5c1131f8a4d4137b8fa8ec52daaafa4c5c485006cdb456660ce817e9d8c1c5" %}
 
 package:
   name: {{ name|lower }}
@@ -13,13 +13,10 @@ source:
   sha256: {{ sha256 }}
   patches:
     - commit.patch
-    - 0001-Use-SobolIndicesExperiment.patch
-    - 0002-Use-KarhunenLoeveP1Algorithm.patch
-    - 0001-Fix-gp_sampler-seed.patch
 
 build:
-  skip: True  # [win]
-  number: 6
+  skip: True  # [win,py2k]
+  number: 0
   script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
@@ -30,23 +27,25 @@ requirements:
     - scipy >=0.15
     - numpy >=1.13
     - jsonschema
+    - pandas >=0.22.0
     - pathos >=0.2
+    - paramiko >=2
     - matplotlib >=2.1
     - ffmpeg
     - openturns ==1.10
     - scikit-learn >=0.18
-    - futures  # [py27]
   run:
     - python
     - scipy >=0.15
     - numpy >=1.13
     - jsonschema
+    - pandas >=0.22.0
     - pathos >=0.2
+    - paramiko >=2
     - matplotlib >=2.1
     - ffmpeg
     - openturns ==1.10
     - scikit-learn >=0.18
-    - futures  # [py27]
 
 test:
   imports:
