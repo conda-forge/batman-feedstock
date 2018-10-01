@@ -1,7 +1,7 @@
 {% set name = "batman" %}
-{% set version = "1.8" %}
-{% set tag = "1.8-Falcone" %}
-{% set sha256 = "7c5c1131f8a4d4137b8fa8ec52daaafa4c5c485006cdb456660ce817e9d8c1c5" %}
+{% set version = "1.9" %}
+{% set tag = "1.9-Pennyworth" %}
+{% set sha256 = "a3d57cb8aad4487add0c3d7f915501a88195b6b59c96cbffaf10879cdecd9af7" %}
 
 package:
   name: {{ name|lower }}
@@ -32,7 +32,7 @@ requirements:
     - paramiko >=2
     - matplotlib >=2.1
     - ffmpeg
-    - openturns ==1.10
+    - openturns >=1.10
     - scikit-learn >=0.18
   run:
     - python
@@ -44,7 +44,7 @@ requirements:
     - paramiko >=2
     - matplotlib >=2.1
     - ffmpeg
-    - openturns ==1.10
+    - openturns >=1.10
     - scikit-learn >=0.18
 
 test:
