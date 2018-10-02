@@ -2,7 +2,7 @@
 +++ b/batman/__init__.py
 @@ -7,4 +7,4 @@ ot.RandomGenerator.SetSeed(123456)
 
- __version__ = '1.8'
+ __version__ = '1.9'
  __branch__ = None
 -__commit__ = None
-+__commit__ = 'dcdae315a51abb230bf4fd4d55fa40cebead74d1'
++__commit__ = '79f99c474d858d2daac3dc7cc6f455d5385b1da3'
