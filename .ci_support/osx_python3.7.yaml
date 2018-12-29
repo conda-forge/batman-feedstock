@@ -1,3 +1,5 @@
+MACOSX_DEPLOYMENT_TARGET:
+- '10.9'
 build_number_decrement:
 - '0'
 channel_sources:
@@ -8,6 +10,10 @@ docker_image:
 - condaforge/linux-anvil
 ffmpeg:
 - '4.0'
+macos_machine:
+- x86_64-apple-darwin13.4.0
+macos_min_version:
+- '10.9'
 pin_run_as_build:
   ffmpeg:
     max_pin: x.x
@@ -15,4 +21,8 @@ pin_run_as_build:
     min_pin: x.x
     max_pin: x.x
 python:
-- '3.5'
+- '3.7'
+zip_keys:
+- - channel_sources
+  - channel_targets
+  - build_number_decrement
