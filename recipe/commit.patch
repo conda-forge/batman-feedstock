@@ -5,4 +5,4 @@
  __version__ = '1.9'
  __branch__ = None
 -__commit__ = None
-+__commit__ = '79f99c474d858d2daac3dc7cc6f455d5385b1da3'
++__commit__ = 'b34bb065a1ec7e247d1f1c328bc6ed39c9672c29'
