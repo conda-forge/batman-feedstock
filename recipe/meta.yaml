@@ -1,7 +1,8 @@
 {% set name = "batman" %}
 {% set version = "1.9" %}
 {% set tag = "1.9-Pennyworth" %}
-{% set sha256 = "a3d57cb8aad4487add0c3d7f915501a88195b6b59c96cbffaf10879cdecd9af7" %}
+{% set commit = "b34bb065a1ec7e247d1f1c328bc6ed39c9672c29" %}
+{% set sha256 = "15635b53c3fc5725901daffdb425f4ada7aaae0ea721c217b7b7f7a4e1d07743" %}
 
 package:
   name: {{ name|lower }}
@@ -9,7 +10,7 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  url: https://gitlab.com/cerfacs/batman/repository/archive.tar.gz?ref={{ tag }}
+  url: https://gitlab.com/cerfacs/batman/repository/archive.tar.gz?ref={{ commit }}
   sha256: {{ sha256 }}
   patches:
     - commit.patch
@@ -17,7 +18,7 @@ source:
 build:
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
   skip: True  # [win]
-  number: 1000
+  number: 2000
 
 requirements:
   build:
@@ -33,7 +34,7 @@ requirements:
     - paramiko >=2
     - matplotlib >=2.1
     - ffmpeg
-    - openturns >=1.10
+    - openturns >=1.12
     - scikit-learn >=0.18
     - backports.tempfile  # [py27]
   run:
@@ -46,7 +47,7 @@ requirements:
     - paramiko >=2
     - matplotlib >=2.1
     - ffmpeg
-    - openturns >=1.10
+    - openturns >=1.12
     - scikit-learn >=0.18
     - backports.tempfile  # [py27]
 
@@ -54,7 +55,7 @@ test:
   imports:
     - batman
   commands:
-    - batman -h
+    - export MPLBACKEND="Agg"; batman -h
 
 about:
   home: https://gitlab.com/cerfacs/batman
