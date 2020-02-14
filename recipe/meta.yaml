@@ -18,7 +18,7 @@ source:
 build:
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
   skip: True  # [win]
-  number: 2001
+  number: 2002
 
 requirements:
   build:
@@ -32,7 +32,7 @@ requirements:
     - pandas >=0.22.0
     - pathos >=0.2
     - paramiko >=2
-    - matplotlib >=2.1
+    - matplotlib-base >=2.1
     - ffmpeg
     - openturns >=1.12
     - scikit-learn >=0.18
@@ -45,7 +45,7 @@ requirements:
     - pandas >=0.22.0
     - pathos >=0.2
     - paramiko >=2
-    - matplotlib >=2.1
+    - matplotlib-base >=2.1
     - ffmpeg
     - openturns >=1.12
     - scikit-learn >=0.18
