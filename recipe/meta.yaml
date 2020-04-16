@@ -18,7 +18,7 @@ source:
 build:
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
   skip: True  # [win]
-  number: 2002
+  number: 2003
 
 requirements:
   build:
