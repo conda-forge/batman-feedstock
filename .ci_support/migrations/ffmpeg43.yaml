@@ -2,6 +2,6 @@ __migrator:
   build_number: 1
   kind: version
   migration_number: 1
-migrator_ts: 1590434493.3695831
-openturns:
-- '1.15'
+ffmpeg:
+- '4.3'
+migrator_ts: 1593964631.3439052

@@ -5,7 +5,7 @@ Home: https://gitlab.com/cerfacs/batman
 
 Package license: CECILL-B
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: Bayesian Analysis Tool for Modelling and uncertAinty quaNtification
 
@@ -186,5 +186,6 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@idast19](https://github.com/idast19/)
 * [@tupui](https://github.com/tupui/)
 
