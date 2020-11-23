@@ -18,10 +18,10 @@ source:
 build:
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
   skip: True  # [win]
-  number: 2006
+  number: 2007
 
 requirements:
-  build:
+  host:
     - pip
     - pytest-runner
     - python
